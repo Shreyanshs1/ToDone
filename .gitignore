@@ -1,0 +1,11 @@
+# Server dependencies
+server/node_modules/
+
+# Client dependencies
+client/node_modules/
+
+# Server environment variables
+server/.env
+
+# Client build output
+client/dist/
