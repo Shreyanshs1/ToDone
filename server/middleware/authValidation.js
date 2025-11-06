@@ -2,6 +2,7 @@ import Joi from "joi";
 
 export const signupValidation = (req, res, next) => {
   const schema = Joi.object({
+    name: Joi.string().min(2).max(50).required(), // <-- CHANGED
     email: Joi.string().email().required(),
     password: Joi.string().min(6).max(100).required(),
   });
