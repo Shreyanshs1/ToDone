@@ -8,7 +8,7 @@ export default {
     extend: {
       fontFamily: {
         quicksand: ['Quicksand', 'sans-serif'],
-        chillax: ['Chillax', 'sans-serif'],
+        montserrat: ['"Montserrat Alternates"', 'sans-serif'],
       },
     },
   },

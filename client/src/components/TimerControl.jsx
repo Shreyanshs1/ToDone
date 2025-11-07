@@ -22,7 +22,7 @@ const TimerControl = () => {
       ) : (
         // STATE 2: No timer is running
         <div className="text-center">
-          <h1 className="text-4xl font-bold">
+          <h1 className="text-4xl">
             Welcome, {user?.name || 'User'}!
           </h1>
           <p className="text-xl text-zinc-400 mt-2">

@@ -1,15 +1,6 @@
 /* Your v4 Tailwind import */
 @import "tailwindcss";
 
-/* 1. Define your local "Chillax" font */
-@font-face {
-  font-family: 'Chillax';
-  src: url('/fonts/Chillax-Regular.otf') format('opentype');
-  font-weight: 400; /* 400 is "regular" */
-  font-style: normal;
-}
-
-/* 2. Set the global font and background */
 html, body, #root {
   /* Apply gradient to the entire viewport height */
   min-height: 100vh;
@@ -29,4 +20,8 @@ body {
     Components can override this, but it fixes the "white page" problem.
   */
   color: white;
+}
+
+h1{
+    font-family: "Montserrat Alternates", sans-serif;
 }

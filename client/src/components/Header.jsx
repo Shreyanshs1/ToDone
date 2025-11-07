@@ -26,8 +26,7 @@ const Header = () => {
         
         {/* Left Side: App Name & Nav */}
         <div className="flex items-center gap-8">
-          {/* Use the 'font-chillax' class we just defined */}
-          <h1 className="text-3xl font-chillax text-white">ToDone</h1>
+          <h1 className="text-3xl text-white">ToDone</h1>
           
           <nav className="flex items-center gap-4">
             <NavLink to="/" end className={navLinkClass}>
