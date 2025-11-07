@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTimer } from '../context/TimerContext';
 import TaskItem from './TaskItem';
+import CreateTaskForm from './CreateTaskForm'; // <-- 1. IMPORT
 
 const TaskList = () => {
   const { tasks, loading } = useTimer();
@@ -15,12 +16,13 @@ const TaskList = () => {
         Your Tasks
       </h2>
       
+      <CreateTaskForm /> {/* <-- 2. ADD THE FORM HERE */}
+
       {tasks.length === 0 ? (
         <p className="text-zinc-500 text-center py-4">
           You haven't created any tasks yet.
         </p>
       ) : (
-        // Render all the tasks
         tasks.map((task) => (
           <TaskItem key={task._id} task={task} />
         ))

@@ -71,6 +71,21 @@ export const TimerProvider = ({ children }) => {
     }
   };
 
+  const createTask = async (title, description) => {
+    try {
+      // 1. Call the API to create the task in the database
+      const { data: newTask } = await api.post('/tasks', { title, description });
+      
+      // 2. Add the new task to the top of our local state
+      //    This is WAY faster than re-fetching.
+      setTasks((prevTasks) => [newTask, ...prevTasks]);
+    } catch (error) {
+      console.error('Error creating task', error);
+      // Re-throw the error so the form can catch it
+      throw error;
+    }
+  };
+
   return (
     <TimerContext.Provider
       value={{
@@ -80,6 +95,7 @@ export const TimerProvider = ({ children }) => {
         startTimer,
         stopTimer,
         fetchTasks,
+        createTask,
       }}
     >
       {children}
