@@ -1,10 +1,16 @@
+import React from 'react';
+import TimerControl from '../components/TimerControl';
+import TaskList from '../components/TaskList';
 
 const DashboardPage = () => {
-  console.log("DashboardPage rendered");
   return (
-    <div className="p-8">
-      <h1 className="text-3xl font-bold">Dashboard</h1>
-      <p>This is the main dashboard. You are logged in.</p>
+    // Main container with vertical layout and a gap
+    <div className="flex flex-col gap-8">
+      {/* Top Part: Timer / Welcome */}
+      <TimerControl />
+
+      {/* Bottom Part: Task List */}
+      <TaskList />
     </div>
   );
 };
