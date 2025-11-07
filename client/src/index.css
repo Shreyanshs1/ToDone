@@ -1,1 +1,32 @@
+/* Your v4 Tailwind import */
 @import "tailwindcss";
+
+/* 1. Define your local "Chillax" font */
+@font-face {
+  font-family: 'Chillax';
+  src: url('/fonts/Chillax-Regular.otf') format('opentype');
+  font-weight: 400; /* 400 is "regular" */
+  font-style: normal;
+}
+
+/* 2. Set the global font and background */
+html, body, #root {
+  /* Apply gradient to the entire viewport height */
+  min-height: 100vh;
+}
+
+body {
+  /* Set Quicksand as the default font for the whole app */
+  font-family: 'Quicksand', sans-serif;
+  
+  /* FIX: Your gradient background.
+    This sets it on the <body> tag.
+  */
+  background-color: #1a1a1a; /* Dark gray fallback */
+  background-image: linear-gradient(180deg, #000000 0%, #1a1a1a 100%);
+  
+  /* FIX: Make ALL text white by default.
+    Components can override this, but it fixes the "white page" problem.
+  */
+  color: white;
+}

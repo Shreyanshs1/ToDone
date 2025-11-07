@@ -1,13 +1,10 @@
 import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { useTimer } from '../context/TimerContext';
-import ActiveTimer from './ActiveTimer';
 import { LogOut } from 'lucide-react';
 
 const Header = () => {
-  const { user, logout } = useAuth();
-  const { activeTimer, stopTimer } = useTimer();
+  const { logout } = useAuth();
   const navigate = useNavigate();
 
   const handleLogout = async () => {
@@ -15,18 +12,23 @@ const Header = () => {
     navigate('/auth');
   };
 
-  // NavLink adds 'active' class to the current page link
+  // This function adds a style to the *active* navigation link
   const navLinkClass = ({ isActive }) =>
-    isActive
-      ? 'text-white font-semibold'
-      : 'text-zinc-400 hover:text-white';
+    `px-3 py-2 rounded-md text-sm font-medium ${
+      isActive
+        ? 'bg-zinc-700 text-white' // Active link style
+        : 'text-zinc-300 hover:bg-zinc-800 hover:text-white' // Inactive link style
+    }`;
 
   return (
-    <header className="w-full p-4 bg-zinc-800 text-white border-b border-zinc-700">
+    <header className="w-full p-4 text-white border-b border-white/10">
       <div className="container mx-auto flex items-center justify-between">
-        {/* Left Side: Navigation & User */}
-        <div className="flex items-center gap-6">
-          <span className="text-xl font-bold">TimeTrack</span>
+        
+        {/* Left Side: App Name & Nav */}
+        <div className="flex items-center gap-8">
+          {/* Use the 'font-chillax' class we just defined */}
+          <h1 className="text-3xl font-chillax text-white">ToDone</h1>
+          
           <nav className="flex items-center gap-4">
             <NavLink to="/" end className={navLinkClass}>
               Dashboard
@@ -37,20 +39,12 @@ const Header = () => {
           </nav>
         </div>
 
-        {/* Right Side: Timer & Logout */}
-        <div className="flex items-center gap-4">
-          {/* This is the magic part: */}
-          {activeTimer && (
-            <ActiveTimer timer={activeTimer} onStop={stopTimer} />
-          )}
-
-          <span className="text-sm text-zinc-300">
-            Hi, {user?.name || 'User'}
-          </span>
+        {/* Right Side: Logout Button Only */}
+        <div className="flex items-center">
           <button
             onClick={handleLogout}
             title="Logout"
-            className="flex items-center gap-2 text-zinc-400 hover:text-white"
+            className="flex items-center gap-2 p-2 rounded-md text-zinc-300 hover:bg-zinc-800 hover:text-white"
           >
             <LogOut className="w-5 h-5" />
           </button>
