@@ -115,7 +115,7 @@ const TaskItem = ({ task }) => {
       </div>
 
       {/* Right Side: Control Panel (all our buttons) */}
-      <div className="flex items-center gap-2 mt-4 sm:mt-0 sm:ml-4 flex-shrink-0">
+      <div className="flex items-center gap-2 mt-4 sm:mt-0 sm:ml-4 shrink-0">
         {/* Status Dropdown */}
         <select
           value={task.status}

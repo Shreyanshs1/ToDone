@@ -1,6 +1,18 @@
 /* Your v4 Tailwind import */
 @import "tailwindcss";
 
+@theme {
+  --font-montserrat: "Montserrat Alternates", sans-serif;
+  --font-chillax: "Chillax", sans-serif;
+}
+
+@font-face {
+  font-family: 'Chillax';
+  src: url('/fonts/Chillax-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 html, body, #root {
   /* Apply gradient to the entire viewport height */
   min-height: 100vh;
@@ -22,6 +34,6 @@ body {
   color: white;
 }
 
-h1{
+/* h1{
     font-family: "Montserrat Alternates", sans-serif;
-}
+} */

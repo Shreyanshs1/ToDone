@@ -23,7 +23,7 @@ const formatTime = (totalSeconds) => {
 const StatCard = ({ title, value, icon }) => (
   <div className="bg-zinc-800 p-6 rounded-lg shadow-lg flex items-center gap-4">
     {/* The 'icon' prop is passed as a JSX element */}
-    <div className="flex-shrink-0">{icon}</div>
+    <div className="shrink-0">{icon}</div>
     <div>
       <div className="text-sm font-medium text-zinc-400">{title}</div>
       <div className="text-3xl font-bold text-white">{value}</div>

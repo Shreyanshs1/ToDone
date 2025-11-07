@@ -10,7 +10,7 @@ const TimerControl = () => {
   return (
     // This wrapper provides the fixed space to prevent layout shift.
     // 'min-h-[10rem]' (160px) gives it a fixed minimum height.
-    <div className="w-full min-h-[10rem] flex items-center justify-center p-8 bg-zinc-800 rounded-lg shadow-lg">
+    <div className="w-full min-h-40 flex items-center justify-center p-8 bg-zinc-800 rounded-lg shadow-lg">
       {activeTimer ? (
         // STATE 1: Timer is running
         <div className="w-full">
@@ -22,7 +22,7 @@ const TimerControl = () => {
       ) : (
         // STATE 2: No timer is running
         <div className="text-center">
-          <h1 className="text-4xl">
+          <h1 className="text-4xl font-chillax">
             Welcome, {user?.name || 'User'}!
           </h1>
           <p className="text-xl text-zinc-400 mt-2">
