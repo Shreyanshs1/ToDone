@@ -16,7 +16,7 @@ const TaskList = () => {
         Your Tasks
       </h2>
       
-      <CreateTaskForm /> {/* <-- 2. ADD THE FORM HERE */}
+      <CreateTaskForm />
 
       {tasks.length === 0 ? (
         <p className="text-zinc-500 text-center py-4">

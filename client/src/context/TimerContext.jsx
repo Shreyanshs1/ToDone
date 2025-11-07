@@ -86,6 +86,40 @@ export const TimerProvider = ({ children }) => {
     }
   };
 
+  const updateTask = async (taskId, updatedData) => {
+    try {
+      // 1. Call the API to update the task in the database
+      // The backend will return the fully updated task
+      const { data: updatedTask } = await api.put(
+        `/tasks/${taskId}`,
+        updatedData
+      );
+
+      // 2. Update the task in our local state
+      setTasks((prevTasks) =>
+        prevTasks.map((task) =>
+          task._id === taskId ? updatedTask : task
+        )
+      );
+    } catch (error) {
+      console.error('Error updating task', error);
+      throw error;
+    }
+  };
+
+  const deleteTask = async (taskId) => {
+    try {
+      // 1. Call the API to delete the task from the database
+      await api.delete(`/tasks/${taskId}`);
+
+      // 2. Remove the task from our local state
+      setTasks((prevTasks) => prevTasks.filter((task) => task._id !== taskId));
+    } catch (error) {
+      console.error('Error deleting task', error);
+      throw error;
+    }
+  };
+
   return (
     <TimerContext.Provider
       value={{
@@ -96,6 +130,8 @@ export const TimerProvider = ({ children }) => {
         stopTimer,
         fetchTasks,
         createTask,
+        updateTask,
+        deleteTask,
       }}
     >
       {children}
