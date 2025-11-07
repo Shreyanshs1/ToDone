@@ -13,9 +13,11 @@ export const AuthProvider = ({ children }) => {
     const checkUser = async () => {
       try {
         const { data } = await api.get('/auth/me');
+        console.log("Auth Me Response:", data);
         setUser(data);
         setIsLoggedIn(true);
       } catch (err) {
+        console.error("Auth Me Error:", err.response?.data || err.message);
         setUser(null);
         setIsLoggedIn(false);
       } finally {

@@ -3,17 +3,19 @@ import ProtectedRoute from './components/ProtectedRoute';
 import AuthPage from './pages/AuthPage';
 import DashboardPage from './pages/DashboardPage';
 import SummaryPage from './pages/SummaryPage';
+import Layout from './components/Layout'; // <-- 1. IMPORT
 
 function App() {
   return (
     <Routes>
-      {/* Public route: everyone can see this */}
       <Route path="/auth" element={<AuthPage />} />
 
-      {/* Protected routes: only logged-in users can see */}
+      {/* 2. WRAP protected routes in the Layout */}
       <Route element={<ProtectedRoute />}>
-        <Route path="/" element={<DashboardPage />} />
-        <Route path="/summary" element={<SummaryPage />} />
+        <Route element={<Layout />}>
+          <Route path="/" element={<DashboardPage />} />
+          <Route path="/summary" element={<SummaryPage />} />
+        </Route>
       </Route>
     </Routes>
   );

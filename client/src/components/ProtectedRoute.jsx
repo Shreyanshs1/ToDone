@@ -20,6 +20,7 @@ const ProtectedRoute = () => {
   }
 
   // User is logged in, show the child route (Dashboard, Summary, etc.)
+  console.log("User is authenticated, accessing protected route.");
   return <Outlet />;
 };
 

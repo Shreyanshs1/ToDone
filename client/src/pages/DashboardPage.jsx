@@ -1,8 +1,8 @@
-import React from 'react';
 
 const DashboardPage = () => {
+  console.log("DashboardPage rendered");
   return (
-    <div className="p-8 text-white">
+    <div className="p-8">
       <h1 className="text-3xl font-bold">Dashboard</h1>
       <p>This is the main dashboard. You are logged in.</p>
     </div>
