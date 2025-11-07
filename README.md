@@ -11,14 +11,18 @@
 * **Frontend (Vercel):** `https://to-done-six.vercel.app/`
 * **Backend (Render):** `https://todone-4vjo.onrender.com/`
 
+### Test Credentials
+
+For a quick review, you can use these credentials:
+* **Email:** `test2@example.com`
+* **Password:** `123456`
+
 ## 📸 Screenshots
 
 ![Alt text](screenshots/1.jpeg)
 ![Alt text](screenshots/2.jpeg)
 ![Alt text](screenshots/3.jpeg)
 ![Alt text](screenshots/4.jpeg)
-
-
 
 
 
