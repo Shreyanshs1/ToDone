@@ -3,14 +3,12 @@ import ProtectedRoute from './components/ProtectedRoute';
 import AuthPage from './pages/AuthPage';
 import DashboardPage from './pages/DashboardPage';
 import SummaryPage from './pages/SummaryPage';
-import Layout from './components/Layout'; // <-- 1. IMPORT
+import Layout from './components/Layout';
 
 function App() {
   return (
     <Routes>
       <Route path="/auth" element={<AuthPage />} />
-
-      {/* 2. WRAP protected routes in the Layout */}
       <Route element={<ProtectedRoute />}>
         <Route element={<Layout />}>
           <Route path="/" element={<DashboardPage />} />

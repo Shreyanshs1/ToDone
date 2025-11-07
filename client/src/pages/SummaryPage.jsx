@@ -7,7 +7,6 @@ import {
   PauseCircle,
 } from 'lucide-react';
 
-// --- Helper Components ---
 
 // 1. A small helper to format the seconds into HH:MM:SS
 const formatTime = (totalSeconds) => {

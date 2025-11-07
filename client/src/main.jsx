@@ -10,8 +10,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
       <AuthProvider>
-        {/* 2. WRAP the App in the TimerProvider */}
-        {/* (It must be *inside* AuthProvider to use it) */}
         <TimerProvider>
           <App />
         </TimerProvider>

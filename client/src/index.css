@@ -1,4 +1,3 @@
-/* Your v4 Tailwind import */
 @import "tailwindcss";
 
 @theme {
@@ -14,26 +13,12 @@
 }
 
 html, body, #root {
-  /* Apply gradient to the entire viewport height */
   min-height: 100vh;
 }
 
 body {
-  /* Set Quicksand as the default font for the whole app */
   font-family: 'Quicksand', sans-serif;
-  
-  /* FIX: Your gradient background.
-    This sets it on the <body> tag.
-  */
-  background-color: #1a1a1a; /* Dark gray fallback */
+  background-color: #1a1a1a;
   background-image: linear-gradient(180deg, #000000 0%, #1a1a1a 100%);
-  
-  /* FIX: Make ALL text white by default.
-    Components can override this, but it fixes the "white page" problem.
-  */
   color: white;
 }
-
-/* h1{
-    font-family: "Montserrat Alternates", sans-serif;
-} */

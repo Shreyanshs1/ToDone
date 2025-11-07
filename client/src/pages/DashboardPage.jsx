@@ -4,7 +4,6 @@ import TaskList from '../components/TaskList';
 
 const DashboardPage = () => {
   return (
-    // Main container with vertical layout and a gap
     <div className="flex flex-col gap-8">
       {/* Top Part: Timer / Welcome */}
       <TimerControl />
